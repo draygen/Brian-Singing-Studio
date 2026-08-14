@@ -1,0 +1,2 @@
+transformers==4.41.2  # MUST stay pinned: nemo bumps it and breaks LlamaAttention in soulxsinger
+torch==2.8.0+cu128    # repo pin 2.2.0 predates Blackwell sm_120
