@@ -1,0 +1,37 @@
+{
+  "_comment": "Brian Singing preset candidates (Phase 2). Each maps to phase2_battery.py knobs. 'preferred' to be set after Brian auditions outputs/phase2/. pitch_shift null = auto (score median matched to Brian's speech median).",
+  "preferred": null,
+  "presets": {
+    "Brian_Singing_Neutral": {
+      "prompt": "references/IndexTTS_Brian_Speaking_Script.wav",
+      "target_style": "standard melody (en_target-like)",
+      "seed": 42, "cfg": 3.0, "n_steps": 32, "pitch_shift": null,
+      "notes": "baseline: best all-round similarity/expressiveness balance"
+    },
+    "Brian_Singing_Soft": {
+      "prompt": "references/IndexTTS_Brian_Speaking_Script.wav",
+      "target_style": "low-register ballad, gentle sustains (outputs/scores/brian_soft.json)",
+      "seed": 42, "cfg": 2.0, "n_steps": 32, "pitch_shift": null,
+      "notes": "lower cfg = looser, breathier delivery"
+    },
+    "Brian_Singing_Rock": {
+      "prompt": "references/IndexTTS_Brian_Speaking_Script.wav",
+      "target_style": "punchy upper-register phrase (outputs/scores/brian_rock.json)",
+      "seed": 42, "cfg": 5.0, "n_steps": 32, "pitch_shift": null,
+      "notes": "higher cfg = tighter, more score-faithful and forceful"
+    },
+    "Brian_Singing_Emotional": {
+      "prompt": "references/IndexTTS_Brian_Speaking_Script.wav",
+      "target_style": "long sustained vowels with melisma (outputs/scores/brian_sustain.json)",
+      "seed": 7, "cfg": 4.0, "n_steps": 32, "pitch_shift": null,
+      "notes": "sustain score exercises vibrato; seed 7 chosen as variation"
+    }
+  },
+  "knob_guide": {
+    "cfg": "1.5 loose/natural ... 3 default ... 5 tight/forceful; also trades expressiveness against score fidelity",
+    "pitch_shift": "semitones, absolute against score; null lets auto_shift match Brian's register; C_pitch_* battery shows -7..+2 range",
+    "n_steps": "16 is 2x faster with small quality cost (E_steps_16 vs A_ref_full)",
+    "seed": "changes phrasing/micro-timing; B_seed_* show the spread",
+    "reference_excerpt": "A_ref_full vs A_ref_early vs A_ref_late — pick whichever holds Brian's timbre best"
+  }
+}
